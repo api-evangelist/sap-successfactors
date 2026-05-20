@@ -63,6 +63,10 @@ apis:
         url: >-
           https://help.sap.com/docs/successfactors-platform/sap-successfactors-api-reference-guide-odata-v2/about-sap-successfactors-odata-apis-v2
 common:
+  - type: GitHubOrganization
+    url: https://github.com/SAP
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/sapsuccessfactors
   - type: Website
     url: https://www.sap.com/products/hcm.html
   - type: Documentation
