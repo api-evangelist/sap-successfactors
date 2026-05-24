@@ -1,0 +1,280 @@
+openapi: 3.1.0
+info:
+  title: SAP SuccessFactors HXM Suite OData API
+  description: |
+    Representative subset of the SAP SuccessFactors HXM Suite OData APIs
+    (v2 and v4) covering common Employee Central entities such as User,
+    PerPerson, EmpEmployment, EmpJob, and FOCompany. Authentication uses
+    OAuth 2.0 SAML bearer assertion or HTTP Basic against the tenant's
+    OData service root.
+  version: "v2"
+  contact:
+    name: SAP SuccessFactors
+    url: https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM
+servers:
+  - url: https://{apiServer}/odata/v2
+    description: SuccessFactors OData V2 service root
+    variables:
+      apiServer:
+        default: api.successfactors.com
+        description: Tenant data center API host (e.g. api4.successfactors.com).
+  - url: https://{apiServer}/odata/v4
+    description: SuccessFactors OData V4 service root
+    variables:
+      apiServer:
+        default: api.successfactors.com
+security:
+  - oauth2: []
+  - basicAuth: []
+paths:
+  /oauth/token:
+    post:
+      summary: Exchange a SAML assertion for an OAuth 2.0 access token
+      description: |
+        Issues an OAuth 2.0 access token using the SAML 2.0 bearer
+        assertion flow against the SuccessFactors tenant.
+      operationId: getOAuthToken
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required: [grant_type, assertion, client_id]
+              properties:
+                grant_type:
+                  type: string
+                  enum: [urn:ietf:params:oauth:grant-type:saml2-bearer]
+                assertion:
+                  type: string
+                client_id:
+                  type: string
+                company_id:
+                  type: string
+                user_id:
+                  type: string
+                new_token:
+                  type: string
+      responses:
+        '200':
+          description: Access token
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+                  token_type:
+                    type: string
+                  expires_in:
+                    type: integer
+  /User:
+    get:
+      summary: List users
+      operationId: listUsers
+      parameters:
+        - $ref: '#/components/parameters/Select'
+        - $ref: '#/components/parameters/Filter'
+        - $ref: '#/components/parameters/Top'
+        - $ref: '#/components/parameters/Skip'
+        - $ref: '#/components/parameters/Format'
+      responses:
+        '200':
+          description: OData collection of users
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ODataCollection'
+  /User('{userId}'):
+    get:
+      summary: Get a user
+      operationId: getUser
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/Select'
+        - $ref: '#/components/parameters/Format'
+      responses:
+        '200':
+          description: User entity
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /PerPerson:
+    get:
+      summary: List Employee Central persons
+      operationId: listPerPerson
+      parameters:
+        - $ref: '#/components/parameters/Select'
+        - $ref: '#/components/parameters/Filter'
+        - $ref: '#/components/parameters/Top'
+        - $ref: '#/components/parameters/Skip'
+        - $ref: '#/components/parameters/Format'
+      responses:
+        '200':
+          description: OData collection of persons
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ODataCollection'
+  /EmpEmployment:
+    get:
+      summary: List employment records
+      operationId: listEmpEmployment
+      parameters:
+        - $ref: '#/components/parameters/Select'
+        - $ref: '#/components/parameters/Filter'
+        - $ref: '#/components/parameters/Top'
+        - $ref: '#/components/parameters/Skip'
+        - $ref: '#/components/parameters/Format'
+      responses:
+        '200':
+          description: OData collection of employment records
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ODataCollection'
+    post:
+      summary: Create an employment record
+      operationId: createEmpEmployment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '201':
+          description: Created
+  /EmpJob:
+    get:
+      summary: List job records
+      operationId: listEmpJob
+      parameters:
+        - $ref: '#/components/parameters/Select'
+        - $ref: '#/components/parameters/Filter'
+        - $ref: '#/components/parameters/Top'
+        - $ref: '#/components/parameters/Skip'
+        - $ref: '#/components/parameters/Format'
+      responses:
+        '200':
+          description: OData collection of job records
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ODataCollection'
+  /FOCompany:
+    get:
+      summary: List foundation company objects
+      operationId: listFOCompany
+      parameters:
+        - $ref: '#/components/parameters/Select'
+        - $ref: '#/components/parameters/Filter'
+        - $ref: '#/components/parameters/Top'
+        - $ref: '#/components/parameters/Skip'
+        - $ref: '#/components/parameters/Format'
+      responses:
+        '200':
+          description: OData collection of company foundation objects
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ODataCollection'
+  /upsert:
+    post:
+      summary: Upsert one or more OData entities
+      description: |
+        OData v2 batch-style upsert endpoint for create-or-update across
+        multiple Employee Central entities.
+      operationId: upsertEntities
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+            examples:
+              upsertUser:
+                value:
+                  __metadata:
+                    uri: User('jdoe')
+                  username: jdoe
+                  status: t
+      responses:
+        '200':
+          description: Upsert result
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+components:
+  parameters:
+    Select:
+      name: $select
+      in: query
+      schema:
+        type: string
+    Filter:
+      name: $filter
+      in: query
+      schema:
+        type: string
+    Top:
+      name: $top
+      in: query
+      schema:
+        type: integer
+    Skip:
+      name: $skip
+      in: query
+      schema:
+        type: integer
+    Format:
+      name: $format
+      in: query
+      schema:
+        type: string
+        enum: [json, xml]
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.successfactors.com/oauth/token
+          scopes: {}
+      description: OAuth 2.0 SAML bearer assertion flow.
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic auth with username@companyId and password.
+  schemas:
+    ODataCollection:
+      type: object
+      properties:
+        d:
+          type: object
+          properties:
+            results:
+              type: array
+              items:
+                type: object
+                additionalProperties: true
+            __next:
+              type: string
+        "@odata.context":
+          type: string
+        value:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
