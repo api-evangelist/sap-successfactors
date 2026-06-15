@@ -1,0 +1,309 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SAP SuccessFactors HXM Suite OData API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://api.successfactors.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Exchange a SAML assertion for an OAuth 2.0 access token",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://{apiServer}/odata/v2/oauth/token",
+        "body": {
+          "type": "form-urlencoded",
+          "data": [
+            {
+              "name": "grant_type",
+              "value": ""
+            },
+            {
+              "name": "assertion",
+              "value": ""
+            },
+            {
+              "name": "client_id",
+              "value": ""
+            },
+            {
+              "name": "company_id",
+              "value": ""
+            },
+            {
+              "name": "user_id",
+              "value": ""
+            },
+            {
+              "name": "new_token",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "docs": "Issues an OAuth 2.0 access token using the SAML 2.0 bearer\nassertion flow against the SuccessFactors tenant.\n"
+    },
+    {
+      "info": {
+        "name": "List users",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://{apiServer}/odata/v2/User",
+        "params": [
+          {
+            "name": "$select",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$filter",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$top",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$skip",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$format",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "List users"
+    },
+    {
+      "info": {
+        "name": "Get a user",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://{apiServer}/odata/v2/User(':userId')",
+        "params": [
+          {
+            "name": "userId",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "$select",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$format",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Get a user"
+    },
+    {
+      "info": {
+        "name": "List Employee Central persons",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://{apiServer}/odata/v2/PerPerson",
+        "params": [
+          {
+            "name": "$select",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$filter",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$top",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$skip",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$format",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "List Employee Central persons"
+    },
+    {
+      "info": {
+        "name": "List employment records",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://{apiServer}/odata/v2/EmpEmployment",
+        "params": [
+          {
+            "name": "$select",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$filter",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$top",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$skip",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$format",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "List employment records"
+    },
+    {
+      "info": {
+        "name": "Create an employment record",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://{apiServer}/odata/v2/EmpEmployment",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create an employment record"
+    },
+    {
+      "info": {
+        "name": "List job records",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://{apiServer}/odata/v2/EmpJob",
+        "params": [
+          {
+            "name": "$select",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$filter",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$top",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$skip",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$format",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "List job records"
+    },
+    {
+      "info": {
+        "name": "List foundation company objects",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://{apiServer}/odata/v2/FOCompany",
+        "params": [
+          {
+            "name": "$select",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$filter",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$top",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$skip",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$format",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "List foundation company objects"
+    },
+    {
+      "info": {
+        "name": "Upsert one or more OData entities",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://{apiServer}/odata/v2/upsert",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "OData v2 batch-style upsert endpoint for create-or-update across\nmultiple Employee Central entities.\n"
+    }
+  ],
+  "bundled": true
+}

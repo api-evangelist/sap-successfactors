@@ -1,0 +1,1239 @@
+{
+  "item": [
+    {
+      "id": "bcb0325b-3bb4-4923-9aeb-3c3dd4c1c59a",
+      "name": "Exchange a SAML assertion for an OAuth 2.0 access token",
+      "request": {
+        "name": "Exchange a SAML assertion for an OAuth 2.0 access token",
+        "description": {
+          "content": "Issues an OAuth 2.0 access token using the SAML 2.0 bearer\nassertion flow against the SuccessFactors tenant.\n",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "oauth",
+            "token"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+              "type": "any",
+              "value": "{{apiServer}}",
+              "key": "apiServer"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "disabled": false,
+              "key": "grant_type",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "assertion",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "client_id",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "company_id",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "user_id",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "new_token",
+              "value": "<string>"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "73dc84fa-b98a-4cd4-bc8f-d46b44f290c4",
+          "name": "Access token",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "oauth",
+                "token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+                  "type": "any",
+                  "value": "{{apiServer}}",
+                  "key": "apiServer"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "grant_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "assertion",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "client_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "company_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "user_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "new_token",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"access_token\": \"string\",\n  \"token_type\": \"string\",\n  \"expires_in\": 2468\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "f73b257c-b336-4a38-a1dc-cea1cc56373b",
+      "name": "List users",
+      "request": {
+        "name": "List users",
+        "description": {},
+        "url": {
+          "path": [
+            "User"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "$select",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "$filter",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "$top",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "$skip",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "$format",
+              "value": "<string>"
+            }
+          ],
+          "variable": [
+            {
+              "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+              "type": "any",
+              "value": "{{apiServer}}",
+              "key": "apiServer"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "2e732cd7-1e9f-48a5-a630-6a7a76ea8b4a",
+          "name": "OData collection of users",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "User"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "$select",
+                  "value": "<string>"
+                },
+                {
+                  "key": "$filter",
+                  "value": "<string>"
+                },
+                {
+                  "key": "$top",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "$skip",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "$format",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+                  "type": "any",
+                  "value": "{{apiServer}}",
+                  "key": "apiServer"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"d\": {\n    \"results\": [\n      {\n        \"key_0\": 6719.198476696668,\n        \"key_1\": \"string\"\n      },\n      {\n        \"key_0\": \"string\",\n        \"key_1\": false\n      }\n    ],\n    \"__next\": \"string\"\n  },\n  \"@odata.context\": \"string\",\n  \"value\": [\n    {\n      \"key_0\": \"string\"\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": true\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "ba8271f7-97ad-435f-b0a3-f467447c2967",
+      "name": "Get a user",
+      "request": {
+        "name": "Get a user",
+        "description": {},
+        "url": {
+          "path": [
+            "User('{{userId}}')"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "$select",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "$format",
+              "value": "<string>"
+            }
+          ],
+          "variable": [
+            {
+              "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+              "type": "any",
+              "value": "{{apiServer}}",
+              "key": "apiServer"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "799cd1b1-3f1c-4df1-879e-182cd184e596",
+          "name": "User entity",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "User('{{userId}}')"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "$select",
+                  "value": "<string>"
+                },
+                {
+                  "key": "$format",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+                  "type": "any",
+                  "value": "{{apiServer}}",
+                  "key": "apiServer"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"key_0\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "fe7ee191-ee38-4b17-8541-5995672052af",
+      "name": "List Employee Central persons",
+      "request": {
+        "name": "List Employee Central persons",
+        "description": {},
+        "url": {
+          "path": [
+            "PerPerson"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "$select",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "$filter",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "$top",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "$skip",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "$format",
+              "value": "<string>"
+            }
+          ],
+          "variable": [
+            {
+              "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+              "type": "any",
+              "value": "{{apiServer}}",
+              "key": "apiServer"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "5fff2238-8913-445d-9f14-a2f26722224c",
+          "name": "OData collection of persons",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "PerPerson"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "$select",
+                  "value": "<string>"
+                },
+                {
+                  "key": "$filter",
+                  "value": "<string>"
+                },
+                {
+                  "key": "$top",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "$skip",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "$format",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+                  "type": "any",
+                  "value": "{{apiServer}}",
+                  "key": "apiServer"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"d\": {\n    \"results\": [\n      {\n        \"key_0\": 6719.198476696668,\n        \"key_1\": \"string\"\n      },\n      {\n        \"key_0\": \"string\",\n        \"key_1\": false\n      }\n    ],\n    \"__next\": \"string\"\n  },\n  \"@odata.context\": \"string\",\n  \"value\": [\n    {\n      \"key_0\": \"string\"\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": true\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "5261caf1-c492-4030-855a-b208e307be48",
+      "name": "List employment records",
+      "request": {
+        "name": "List employment records",
+        "description": {},
+        "url": {
+          "path": [
+            "EmpEmployment"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "$select",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "$filter",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "$top",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "$skip",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "$format",
+              "value": "<string>"
+            }
+          ],
+          "variable": [
+            {
+              "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+              "type": "any",
+              "value": "{{apiServer}}",
+              "key": "apiServer"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "4119c60f-59e3-43e2-9f83-658d03344050",
+          "name": "OData collection of employment records",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "EmpEmployment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "$select",
+                  "value": "<string>"
+                },
+                {
+                  "key": "$filter",
+                  "value": "<string>"
+                },
+                {
+                  "key": "$top",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "$skip",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "$format",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+                  "type": "any",
+                  "value": "{{apiServer}}",
+                  "key": "apiServer"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"d\": {\n    \"results\": [\n      {\n        \"key_0\": 6719.198476696668,\n        \"key_1\": \"string\"\n      },\n      {\n        \"key_0\": \"string\",\n        \"key_1\": false\n      }\n    ],\n    \"__next\": \"string\"\n  },\n  \"@odata.context\": \"string\",\n  \"value\": [\n    {\n      \"key_0\": \"string\"\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": true\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "7b7f16c0-b20e-41a9-9c38-be19f3733936",
+      "name": "Create an employment record",
+      "request": {
+        "name": "Create an employment record",
+        "description": {},
+        "url": {
+          "path": [
+            "EmpEmployment"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+              "type": "any",
+              "value": "{{apiServer}}",
+              "key": "apiServer"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"key_0\": 9260.170061156627\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "04e0b516-b1f1-47d5-bd8e-52a09d26e922",
+          "name": "Created",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "EmpEmployment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+                  "type": "any",
+                  "value": "{{apiServer}}",
+                  "key": "apiServer"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "bdf31d91-94d4-485c-a45b-3063f7a368f5",
+      "name": "List job records",
+      "request": {
+        "name": "List job records",
+        "description": {},
+        "url": {
+          "path": [
+            "EmpJob"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "$select",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "$filter",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "$top",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "$skip",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "$format",
+              "value": "<string>"
+            }
+          ],
+          "variable": [
+            {
+              "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+              "type": "any",
+              "value": "{{apiServer}}",
+              "key": "apiServer"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "95624463-94b0-4654-8656-a1a38a6c70b3",
+          "name": "OData collection of job records",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "EmpJob"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "$select",
+                  "value": "<string>"
+                },
+                {
+                  "key": "$filter",
+                  "value": "<string>"
+                },
+                {
+                  "key": "$top",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "$skip",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "$format",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+                  "type": "any",
+                  "value": "{{apiServer}}",
+                  "key": "apiServer"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"d\": {\n    \"results\": [\n      {\n        \"key_0\": 6719.198476696668,\n        \"key_1\": \"string\"\n      },\n      {\n        \"key_0\": \"string\",\n        \"key_1\": false\n      }\n    ],\n    \"__next\": \"string\"\n  },\n  \"@odata.context\": \"string\",\n  \"value\": [\n    {\n      \"key_0\": \"string\"\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": true\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "c68836d5-9819-446f-b7d6-144f24ef7451",
+      "name": "List foundation company objects",
+      "request": {
+        "name": "List foundation company objects",
+        "description": {},
+        "url": {
+          "path": [
+            "FOCompany"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "$select",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "$filter",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "$top",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "$skip",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "$format",
+              "value": "<string>"
+            }
+          ],
+          "variable": [
+            {
+              "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+              "type": "any",
+              "value": "{{apiServer}}",
+              "key": "apiServer"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "6f79c803-82e3-4c8a-999b-8a2ef5b9751a",
+          "name": "OData collection of company foundation objects",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "FOCompany"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "$select",
+                  "value": "<string>"
+                },
+                {
+                  "key": "$filter",
+                  "value": "<string>"
+                },
+                {
+                  "key": "$top",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "$skip",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "$format",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+                  "type": "any",
+                  "value": "{{apiServer}}",
+                  "key": "apiServer"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"d\": {\n    \"results\": [\n      {\n        \"key_0\": 6719.198476696668,\n        \"key_1\": \"string\"\n      },\n      {\n        \"key_0\": \"string\",\n        \"key_1\": false\n      }\n    ],\n    \"__next\": \"string\"\n  },\n  \"@odata.context\": \"string\",\n  \"value\": [\n    {\n      \"key_0\": \"string\"\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": true\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "3fa2d93d-e159-4c71-a0ba-2a0c34d24389",
+      "name": "Upsert one or more OData entities",
+      "request": {
+        "name": "Upsert one or more OData entities",
+        "description": {
+          "content": "OData v2 batch-style upsert endpoint for create-or-update across\nmultiple Employee Central entities.\n",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "upsert"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+              "type": "any",
+              "value": "{{apiServer}}",
+              "key": "apiServer"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"key_0\": 9260.170061156627\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "1bd535dd-611b-4851-9c00-8340c68873ac",
+          "name": "Upsert result",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "upsert"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+                  "type": "any",
+                  "value": "{{apiServer}}",
+                  "key": "apiServer"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"__metadata\": {\n    \"uri\": \"User('jdoe')\"\n  },\n  \"username\": \"jdoe\",\n  \"status\": \"t\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"key_0\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Tenant data center API host (e.g. api4.successfactors.com).",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "api.successfactors.com",
+      "key": "apiServer"
+    },
+    {
+      "type": "string",
+      "value": "https://{{apiServer}}/odata/v2",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "userId"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.successfactors.com/oauth/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "055143b5-c52b-442f-9b7d-53920804c9d9",
+    "name": "SAP SuccessFactors HXM Suite OData API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representative subset of the SAP SuccessFactors HXM Suite OData APIs\n(v2 and v4) covering common Employee Central entities such as User,\nPerPerson, EmpEmployment, EmpJob, and FOCompany. Authentication uses\nOAuth 2.0 SAML bearer assertion or HTTP Basic against the tenant's\nOData service root.\n\n\nContact Support:\n Name: SAP SuccessFactors",
+      "type": "text/plain"
+    }
+  }
+}
