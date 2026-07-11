@@ -63,6 +63,10 @@ apis:
         url: >-
           https://help.sap.com/docs/successfactors-platform/sap-successfactors-api-reference-guide-odata-v2/about-sap-successfactors-odata-apis-v2
 common:
+  - type: Authentication
+    url: authentication/sap-successfactors-authentication.yml
+  - type: OAuthScopes
+    url: scopes/sap-successfactors-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/SAP
   - type: LinkedIn
