@@ -63,6 +63,10 @@ apis:
         url: >-
           https://help.sap.com/docs/successfactors-platform/sap-successfactors-api-reference-guide-odata-v2/about-sap-successfactors-odata-apis-v2
 common:
+  - type: VulnerabilityDisclosure
+    url: security/sap-successfactors-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/sap-successfactors-domain-security.yml
   - type: Authentication
     url: authentication/sap-successfactors-authentication.yml
   - type: OAuthScopes
