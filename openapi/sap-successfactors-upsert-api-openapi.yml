@@ -1,0 +1,82 @@
+openapi: 3.1.0
+info:
+  title: SAP SuccessFactors HXM Suite OData EmpEmployment Upsert API
+  description: 'Representative subset of the SAP SuccessFactors HXM Suite OData APIs
+
+    (v2 and v4) covering common Employee Central entities such as User,
+
+    PerPerson, EmpEmployment, EmpJob, and FOCompany. Authentication uses
+
+    OAuth 2.0 SAML bearer assertion or HTTP Basic against the tenant''s
+
+    OData service root.
+
+    '
+  version: v2
+  contact:
+    name: SAP SuccessFactors
+    url: https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM
+servers:
+- url: https://{apiServer}/odata/v2
+  description: SuccessFactors OData V2 service root
+  variables:
+    apiServer:
+      default: api.successfactors.com
+      description: Tenant data center API host (e.g. api4.successfactors.com).
+- url: https://{apiServer}/odata/v4
+  description: SuccessFactors OData V4 service root
+  variables:
+    apiServer:
+      default: api.successfactors.com
+security:
+- oauth2: []
+- basicAuth: []
+tags:
+- name: Upsert
+paths:
+  /upsert:
+    post:
+      summary: Upsert one or more OData entities
+      description: 'OData v2 batch-style upsert endpoint for create-or-update across
+
+        multiple Employee Central entities.
+
+        '
+      operationId: upsertEntities
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+            examples:
+              upsertUser:
+                value:
+                  __metadata:
+                    uri: User('jdoe')
+                  username: jdoe
+                  status: t
+      responses:
+        '200':
+          description: Upsert result
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      tags:
+      - Upsert
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.successfactors.com/oauth/token
+          scopes: {}
+      description: OAuth 2.0 SAML bearer assertion flow.
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic auth with username@companyId and password.
