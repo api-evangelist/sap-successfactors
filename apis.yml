@@ -8,7 +8,19 @@ description: >-
   Recruiting, Onboarding, Learning, and other HCM modules using OAuth 2.0
   or HTTP Basic authentication.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/sap-successfactors.png
 tags:
   - HCM
   - HR
@@ -23,45 +35,131 @@ created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.19'
 apis:
-  - aid: sap-successfactors:odata-v4-api
-    name: SAP SuccessFactors OData V4 API
-    description: >-
-      OData V4 REST API for HXM Suite providing CRUD access to Employee
-      Central, talent management, learning, and platform entities.
-      Authentication uses OAuth 2.0 SAML bearer assertion or HTTP Basic.
-    humanURL: >-
+- aid: sap-successfactors:odata-v4-api
+  name: SAP SuccessFactors OData V4 API
+  description: >-
+    OData V4 REST API for HXM Suite providing CRUD access to Employee Central, talent management, learning,
+    and platform entities. Authentication uses OAuth 2.0 SAML bearer assertion or HTTP Basic.
+  humanURL: >-
+    https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/9f5f060351034d98990213d077dab38a/b96a4731870e48d090bfbe47b045d259.html
+  baseURL: https://api.successfactors.com/odata/v4
+  tags:
+  - HCM
+  - OData
+  - Employee Central
+  - HR
+  properties:
+  - type: Documentation
+    url: >-
       https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/9f5f060351034d98990213d077dab38a/b96a4731870e48d090bfbe47b045d259.html
-    baseURL: https://api.successfactors.com/odata/v4
-    tags:
-      - HCM
-      - OData
-      - Employee Central
-      - HR
-    properties:
-      - type: Documentation
-        url: >-
-          https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/9f5f060351034d98990213d077dab38a/b96a4731870e48d090bfbe47b045d259.html
-      - type: Reference Guide
-        url: >-
-          https://help.sap.com/doc/2d1d6fcc4eae4db8b9bbd3103baee1c7/2511/en-US/HXMSuiteODataAPIRefGuideV4.pdf
-  - aid: sap-successfactors:odata-v2-api
-    name: SAP SuccessFactors OData V2 API
-    description: >-
-      OData V2 REST API for HXM Suite covering Employee Central,
-      Recruiting, Onboarding, Compensation, Learning, and platform
-      foundation objects. Authentication uses OAuth 2.0 or HTTP Basic.
-    humanURL: >-
+  - type: Reference Guide
+    url: >-
+      https://help.sap.com/doc/2d1d6fcc4eae4db8b9bbd3103baee1c7/2511/en-US/HXMSuiteODataAPIRefGuideV4.pdf
+- aid: sap-successfactors:odata-v2-api
+  name: SAP SuccessFactors OData V2 API
+  description: >-
+    OData V2 REST API for HXM Suite covering Employee Central, Recruiting, Onboarding, Compensation, Learning,
+    and platform foundation objects. Authentication uses OAuth 2.0 or HTTP Basic.
+  humanURL: >-
+    https://help.sap.com/docs/successfactors-platform/sap-successfactors-api-reference-guide-odata-v2/about-sap-successfactors-odata-apis-v2
+  baseURL: https://api.successfactors.com/odata/v2
+  tags:
+  - HCM
+  - OData
+  - Employee Central
+  - HR
+  properties:
+  - type: Documentation
+    url: >-
       https://help.sap.com/docs/successfactors-platform/sap-successfactors-api-reference-guide-odata-v2/about-sap-successfactors-odata-apis-v2
-    baseURL: https://api.successfactors.com/odata/v2
-    tags:
-      - HCM
-      - OData
-      - Employee Central
-      - HR
-    properties:
-      - type: Documentation
-        url: >-
-          https://help.sap.com/docs/successfactors-platform/sap-successfactors-api-reference-guide-odata-v2/about-sap-successfactors-odata-apis-v2
+- aid: sap-successfactors:sap-successfactors-empemployment-api
+  name: SAP SuccessFactors EmpEmployment API
+  description: The EmpEmployment API from SAP SuccessFactors — 1 operation(s) for empemployment.
+  humanURL: >-
+    https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/9f5f060351034d98990213d077dab38a/b96a4731870e48d090bfbe47b045d259.html
+  baseURL: https://api.successfactors.com/odata/v4
+  tags:
+  - EmpEmployment
+  properties:
+  - type: OpenAPI
+    url: openapi/sap-successfactors-empemployment-api-openapi.yml
+- aid: sap-successfactors:sap-successfactors-empjob-api
+  name: SAP SuccessFactors EmpJob API
+  description: The EmpJob API from SAP SuccessFactors — 1 operation(s) for empjob.
+  humanURL: >-
+    https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/9f5f060351034d98990213d077dab38a/b96a4731870e48d090bfbe47b045d259.html
+  baseURL: https://api.successfactors.com/odata/v4
+  tags:
+  - EmpJob
+  properties:
+  - type: OpenAPI
+    url: openapi/sap-successfactors-empjob-api-openapi.yml
+- aid: sap-successfactors:sap-successfactors-focompany-api
+  name: SAP SuccessFactors FOCompany API
+  description: The FOCompany API from SAP SuccessFactors — 1 operation(s) for focompany.
+  humanURL: >-
+    https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/9f5f060351034d98990213d077dab38a/b96a4731870e48d090bfbe47b045d259.html
+  baseURL: https://api.successfactors.com/odata/v4
+  tags:
+  - FOCompany
+  properties:
+  - type: OpenAPI
+    url: openapi/sap-successfactors-focompany-api-openapi.yml
+- aid: sap-successfactors:sap-successfactors-oauth-api
+  name: SAP SuccessFactors Oauth API
+  description: The Oauth API from SAP SuccessFactors — 1 operation(s) for oauth.
+  humanURL: >-
+    https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/9f5f060351034d98990213d077dab38a/b96a4731870e48d090bfbe47b045d259.html
+  baseURL: https://api.successfactors.com/odata/v4
+  tags:
+  - Oauth
+  properties:
+  - type: OpenAPI
+    url: openapi/sap-successfactors-oauth-api-openapi.yml
+- aid: sap-successfactors:sap-successfactors-perperson-api
+  name: SAP SuccessFactors PerPerson API
+  description: The PerPerson API from SAP SuccessFactors — 1 operation(s) for perperson.
+  humanURL: >-
+    https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/9f5f060351034d98990213d077dab38a/b96a4731870e48d090bfbe47b045d259.html
+  baseURL: https://api.successfactors.com/odata/v4
+  tags:
+  - PerPerson
+  properties:
+  - type: OpenAPI
+    url: openapi/sap-successfactors-perperson-api-openapi.yml
+- aid: sap-successfactors:sap-successfactors-upsert-api
+  name: SAP SuccessFactors Upsert API
+  description: The Upsert API from SAP SuccessFactors — 1 operation(s) for upsert.
+  humanURL: >-
+    https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/9f5f060351034d98990213d077dab38a/b96a4731870e48d090bfbe47b045d259.html
+  baseURL: https://api.successfactors.com/odata/v4
+  tags:
+  - Upsert
+  properties:
+  - type: OpenAPI
+    url: openapi/sap-successfactors-upsert-api-openapi.yml
+- aid: sap-successfactors:sap-successfactors-user-api
+  name: SAP SuccessFactors User API
+  description: The User API from SAP SuccessFactors — 1 operation(s) for user.
+  humanURL: >-
+    https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/9f5f060351034d98990213d077dab38a/b96a4731870e48d090bfbe47b045d259.html
+  baseURL: https://api.successfactors.com/odata/v4
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/sap-successfactors-user-api-openapi.yml
+- aid: sap-successfactors:sap-successfactors-user-userid-api
+  name: SAP SuccessFactors User('{userId}') API
+  description: The User('{userId}') API from SAP SuccessFactors — 1 operation(s) for user('{userid}').
+  humanURL: >-
+    https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/9f5f060351034d98990213d077dab38a/b96a4731870e48d090bfbe47b045d259.html
+  baseURL: https://api.successfactors.com/odata/v4
+  tags:
+  - User('{userId}')
+  properties:
+  - type: OpenAPI
+    url: openapi/sap-successfactors-user-userid-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/sap-successfactors-agentic-access.yml
