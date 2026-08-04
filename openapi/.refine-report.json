@@ -1,0 +1,28 @@
+{
+  "provider": "sap-successfactors",
+  "sources": [
+    "sap-successfactors-empemployment-api-openapi.yml",
+    "sap-successfactors-empjob-api-openapi.yml",
+    "sap-successfactors-focompany-api-openapi.yml",
+    "sap-successfactors-oauth-api-openapi.yml",
+    "sap-successfactors-perperson-api-openapi.yml",
+    "sap-successfactors-upsert-api-openapi.yml",
+    "sap-successfactors-user-api-openapi.yml",
+    "sap-successfactors-user-userid-api-openapi.yml"
+  ],
+  "outputs": [
+    "sap-successfactors-empemployment-api-openapi.yml",
+    "sap-successfactors-empjob-api-openapi.yml",
+    "sap-successfactors-focompany-api-openapi.yml",
+    "sap-successfactors-oauth-api-openapi.yml",
+    "sap-successfactors-perperson-api-openapi.yml",
+    "sap-successfactors-upsert-api-openapi.yml",
+    "sap-successfactors-user-api-openapi.yml",
+    "sap-successfactors-user-userid-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
