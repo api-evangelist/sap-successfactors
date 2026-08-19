@@ -1,0 +1,67 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SAP SuccessFactors HXM Suite OData EmpEmployment FOCompany API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://api.successfactors.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "FOCompany",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List foundation company objects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{apiServer}/odata/v2/FOCompany",
+            "params": [
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "$filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "$top",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "$skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "$format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List foundation company objects"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

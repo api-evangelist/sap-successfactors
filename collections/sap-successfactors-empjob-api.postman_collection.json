@@ -1,0 +1,190 @@
+{
+  "item": [
+    {
+      "id": "c61ce610-1708-41e9-8e35-2fc13729dc79",
+      "name": "EmpJob",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2f28dcfb-44ae-4790-a33f-d41801c7a834",
+          "name": "List job records",
+          "request": {
+            "name": "List job records",
+            "description": {},
+            "url": {
+              "path": [
+                "EmpJob"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "$filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "$top",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "$skip",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "$format",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+                  "type": "any",
+                  "value": "{{apiServer}}",
+                  "key": "apiServer"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "87f24d86-1703-463e-be23-68c08a0ea066",
+              "name": "OData collection of job records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EmpJob"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$format",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+                      "type": "any",
+                      "value": "{{apiServer}}",
+                      "key": "apiServer"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"d\": {\n    \"results\": [\n      {\n        \"key_0\": 950\n      },\n      {\n        \"key_0\": true,\n        \"key_1\": 1076,\n        \"key_2\": true\n      }\n    ],\n    \"__next\": \"string\"\n  },\n  \"@odata.context\": \"string\",\n  \"value\": [\n    {\n      \"key_0\": false,\n      \"key_1\": 3981.703081709337\n    },\n    {\n      \"key_0\": 6208.16545231884\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Tenant data center API host (e.g. api4.successfactors.com).",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "api.successfactors.com",
+      "key": "apiServer"
+    },
+    {
+      "type": "string",
+      "value": "https://{{apiServer}}/odata/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.successfactors.com/oauth/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7267294e-fec7-4d57-aedb-4c4dddd11c4b",
+    "name": "SAP SuccessFactors HXM Suite OData EmpEmployment EmpJob API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representative subset of the SAP SuccessFactors HXM Suite OData APIs\n(v2 and v4) covering common Employee Central entities such as User,\nPerPerson, EmpEmployment, EmpJob, and FOCompany. Authentication uses\nOAuth 2.0 SAML bearer assertion or HTTP Basic against the tenant's\nOData service root.\n\n\nContact Support:\n Name: SAP SuccessFactors",
+      "type": "text/plain"
+    }
+  }
+}

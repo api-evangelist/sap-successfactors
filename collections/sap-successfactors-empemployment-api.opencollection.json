@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SAP SuccessFactors HXM Suite OData EmpEmployment API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://api.successfactors.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "EmpEmployment",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List employment records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{apiServer}/odata/v2/EmpEmployment",
+            "params": [
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "$filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "$top",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "$skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "$format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List employment records"
+        },
+        {
+          "info": {
+            "name": "Create an employment record",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{apiServer}/odata/v2/EmpEmployment",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an employment record"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

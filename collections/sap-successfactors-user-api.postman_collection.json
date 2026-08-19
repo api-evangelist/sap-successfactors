@@ -1,0 +1,190 @@
+{
+  "item": [
+    {
+      "id": "39eb7389-f5f9-497e-8b74-69466886845f",
+      "name": "User",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3c0c10cb-66ac-4388-8573-71777d271575",
+          "name": "List users",
+          "request": {
+            "name": "List users",
+            "description": {},
+            "url": {
+              "path": [
+                "User"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "$filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "$top",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "$skip",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "$format",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+                  "type": "any",
+                  "value": "{{apiServer}}",
+                  "key": "apiServer"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "03e3a2ad-bfc2-47a8-8073-bd5cfa42b25e",
+              "name": "OData collection of users",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "User"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$format",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Tenant data center API host (e.g. api4.successfactors.com).",
+                      "type": "any",
+                      "value": "{{apiServer}}",
+                      "key": "apiServer"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"d\": {\n    \"results\": [\n      {\n        \"key_0\": 3521.742239194464,\n        \"key_1\": \"string\"\n      },\n      {\n        \"key_0\": \"string\",\n        \"key_1\": 4780.678782316453,\n        \"key_2\": false,\n        \"key_3\": \"string\",\n        \"key_4\": 3395.4178894967968\n      }\n    ],\n    \"__next\": \"string\"\n  },\n  \"@odata.context\": \"string\",\n  \"value\": [\n    {\n      \"key_0\": 4240.392055538547,\n      \"key_1\": 3176.761649623203,\n      \"key_2\": false\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": 8773.287696674799\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Tenant data center API host (e.g. api4.successfactors.com).",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "api.successfactors.com",
+      "key": "apiServer"
+    },
+    {
+      "type": "string",
+      "value": "https://{{apiServer}}/odata/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.successfactors.com/oauth/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e8396d50-fe69-4888-9a1a-5eb0d097123b",
+    "name": "SAP SuccessFactors HXM Suite OData EmpEmployment User API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representative subset of the SAP SuccessFactors HXM Suite OData APIs\n(v2 and v4) covering common Employee Central entities such as User,\nPerPerson, EmpEmployment, EmpJob, and FOCompany. Authentication uses\nOAuth 2.0 SAML bearer assertion or HTTP Basic against the tenant's\nOData service root.\n\n\nContact Support:\n Name: SAP SuccessFactors",
+      "type": "text/plain"
+    }
+  }
+}
