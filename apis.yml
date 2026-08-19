@@ -33,7 +33,7 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/sap-successfactors/refs/heads/main/apis.yml
 created: '2026-05-11'
 modified: '2026-05-11'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: sap-successfactors:odata-v4-api
   name: SAP SuccessFactors OData V4 API
