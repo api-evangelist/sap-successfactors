@@ -112,6 +112,8 @@ apis:
     https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/9f5f060351034d98990213d077dab38a/b96a4731870e48d090bfbe47b045d259.html
   baseURL: https://api.successfactors.com/odata/v4
   tags:
+  - Authentication
+  tags_raw:
   - Oauth
   properties:
   - type: OpenAPI
@@ -133,7 +135,8 @@ apis:
   humanURL: >-
     https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/9f5f060351034d98990213d077dab38a/b96a4731870e48d090bfbe47b045d259.html
   baseURL: https://api.successfactors.com/odata/v4
-  tags:
+  tags: []
+  tags_raw:
   - Upsert
   properties:
   - type: OpenAPI
@@ -155,7 +158,8 @@ apis:
   humanURL: >-
     https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/9f5f060351034d98990213d077dab38a/b96a4731870e48d090bfbe47b045d259.html
   baseURL: https://api.successfactors.com/odata/v4
-  tags:
+  tags: []
+  tags_raw:
   - User('{userId}')
   properties:
   - type: OpenAPI
