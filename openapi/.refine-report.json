@@ -1,14 +1,7 @@
 {
   "provider": "sap-successfactors",
   "sources": [
-    "sap-successfactors-empemployment-api-openapi.yml",
-    "sap-successfactors-empjob-api-openapi.yml",
-    "sap-successfactors-focompany-api-openapi.yml",
-    "sap-successfactors-oauth-api-openapi.yml",
-    "sap-successfactors-perperson-api-openapi.yml",
-    "sap-successfactors-upsert-api-openapi.yml",
-    "sap-successfactors-user-api-openapi.yml",
-    "sap-successfactors-user-userid-api-openapi.yml"
+    "_original/sap-successfactors-openapi.yml"
   ],
   "outputs": [
     "sap-successfactors-empemployment-api-openapi.yml",
@@ -20,9 +13,42 @@
     "sap-successfactors-user-api-openapi.yml",
     "sap-successfactors-user-userid-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "sap-successfactors-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sap-successfactors-openapi.yml: tagged paths POST /oauth/token -> Oauth",
+    "sap-successfactors-openapi.yml: tagged paths GET /User -> User",
+    "sap-successfactors-openapi.yml: tagged paths GET /User('{userId}') -> User('{userId}')",
+    "sap-successfactors-openapi.yml: tagged paths GET /PerPerson -> PerPerson",
+    "sap-successfactors-openapi.yml: tagged paths GET /EmpEmployment -> EmpEmployment",
+    "sap-successfactors-openapi.yml: tagged paths POST /EmpEmployment -> EmpEmployment",
+    "sap-successfactors-openapi.yml: tagged paths GET /EmpJob -> EmpJob",
+    "sap-successfactors-openapi.yml: tagged paths GET /FOCompany -> FOCompany",
+    "sap-successfactors-openapi.yml: tagged paths POST /upsert -> Upsert",
+    "sap-successfactors-openapi.yml: declared missing tag: EmpEmployment",
+    "sap-successfactors-openapi.yml: declared missing tag: EmpJob",
+    "sap-successfactors-openapi.yml: declared missing tag: FOCompany",
+    "sap-successfactors-openapi.yml: declared missing tag: Oauth",
+    "sap-successfactors-openapi.yml: declared missing tag: PerPerson",
+    "sap-successfactors-openapi.yml: declared missing tag: Upsert",
+    "sap-successfactors-openapi.yml: declared missing tag: User",
+    "sap-successfactors-openapi.yml: declared missing tag: User('{userId}')",
+    "superseded outputs removed: sap-successfactors-o-auth-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 10 total)"
+  ],
+  "skipped": [
+    "sap-successfactors-empemployment-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sap-successfactors-empjob-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sap-successfactors-focompany-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sap-successfactors-o-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sap-successfactors-perperson-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sap-successfactors-upsert-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sap-successfactors-user-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sap-successfactors-user-userid-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
