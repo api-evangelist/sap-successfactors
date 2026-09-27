@@ -13,9 +13,7 @@
     "sap-successfactors-user-api-openapi.yml",
     "sap-successfactors-user-userid-api-openapi.yml"
   ],
-  "archived": [
-    "deleted 1 superseded output(s) from the previous generation"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -38,14 +36,13 @@
     "sap-successfactors-openapi.yml: declared missing tag: Upsert",
     "sap-successfactors-openapi.yml: declared missing tag: User",
     "sap-successfactors-openapi.yml: declared missing tag: User('{userId}')",
-    "superseded outputs removed: sap-successfactors-o-auth-api-openapi.yml",
-    "apis.yml register: written (+1 apis, 10 total)"
+    "apis.yml register: already-registered"
   ],
   "skipped": [
     "sap-successfactors-empemployment-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "sap-successfactors-empjob-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "sap-successfactors-focompany-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "sap-successfactors-o-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sap-successfactors-oauth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "sap-successfactors-perperson-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "sap-successfactors-upsert-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "sap-successfactors-user-api-openapi.yml: previously refined output, superseded by openapi/_original/",

@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: SAP SuccessFactors HXM Suite OData OAUTH API
+  title: SAP SuccessFactors HXM Suite OData OAuth API
   description: 'Representative subset of the SAP SuccessFactors HXM Suite OData APIs
 
     (v2 and v4) covering common Employee Central entities such as User,
