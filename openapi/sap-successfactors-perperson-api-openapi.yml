@@ -52,12 +52,28 @@ paths:
       tags:
       - PerPerson
 components:
+  schemas:
+    ODataCollection:
+      type: object
+      properties:
+        d:
+          type: object
+          properties:
+            results:
+              type: array
+              items:
+                type: object
+                additionalProperties: true
+            __next:
+              type: string
+        '@odata.context':
+          type: string
+        value:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
   parameters:
-    Filter:
-      name: $filter
-      in: query
-      schema:
-        type: string
     Top:
       name: $top
       in: query
@@ -81,27 +97,11 @@ components:
       in: query
       schema:
         type: integer
-  schemas:
-    ODataCollection:
-      type: object
-      properties:
-        d:
-          type: object
-          properties:
-            results:
-              type: array
-              items:
-                type: object
-                additionalProperties: true
-            __next:
-              type: string
-        '@odata.context':
-          type: string
-        value:
-          type: array
-          items:
-            type: object
-            additionalProperties: true
+    Filter:
+      name: $filter
+      in: query
+      schema:
+        type: string
   securitySchemes:
     oauth2:
       type: oauth2
