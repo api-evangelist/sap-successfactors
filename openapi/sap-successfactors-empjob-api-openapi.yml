@@ -52,6 +52,35 @@ paths:
       tags:
       - EmpJob
 components:
+  parameters:
+    Skip:
+      name: $skip
+      in: query
+      schema:
+        type: integer
+    Top:
+      name: $top
+      in: query
+      schema:
+        type: integer
+    Select:
+      name: $select
+      in: query
+      schema:
+        type: string
+    Format:
+      name: $format
+      in: query
+      schema:
+        type: string
+        enum:
+        - json
+        - xml
+    Filter:
+      name: $filter
+      in: query
+      schema:
+        type: string
   schemas:
     ODataCollection:
       type: object
@@ -73,35 +102,6 @@ components:
           items:
             type: object
             additionalProperties: true
-  parameters:
-    Top:
-      name: $top
-      in: query
-      schema:
-        type: integer
-    Select:
-      name: $select
-      in: query
-      schema:
-        type: string
-    Format:
-      name: $format
-      in: query
-      schema:
-        type: string
-        enum:
-        - json
-        - xml
-    Skip:
-      name: $skip
-      in: query
-      schema:
-        type: integer
-    Filter:
-      name: $filter
-      in: query
-      schema:
-        type: string
   securitySchemes:
     oauth2:
       type: oauth2
