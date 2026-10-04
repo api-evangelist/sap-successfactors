@@ -183,6 +183,9 @@ apis:
   - type: APIReference
     url: https://api.sap.com/products/SAPSuccessFactors/apis/REST
 common:
+- type: CapabilityMap
+  url: capabilities/sap-successfactors-capability-edges.yml
+  name: SAP SuccessFactors Business Capability Map
 - type: ParentCompany
   url: https://apis.io/providers/sap/
   name: Sap

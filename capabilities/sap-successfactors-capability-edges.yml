@@ -1,0 +1,32 @@
+slug: sap-successfactors
+provider: SAP SuccessFactors
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: EmpEmployment
+  spec_file: sap-successfactors-empemployment-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.85
+  evidence: GET /EmpEmployment  listEmpEmployment  List employment records
+  reason: CRUD on Employee Central employment records is core employee record keeping — HR Operations
+    Management within HCM.
+- tag: PerPerson
+  spec_file: sap-successfactors-perperson-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.85
+  evidence: GET /PerPerson  listPerPerson  List Employee Central persons
+  reason: Person records in Employee Central are employee master records — HR Operations Management.
