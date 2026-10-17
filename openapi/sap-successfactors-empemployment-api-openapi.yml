@@ -73,16 +73,21 @@ components:
       in: query
       schema:
         type: integer
-    Top:
-      name: $top
+    Filter:
+      name: $filter
       in: query
       schema:
-        type: integer
+        type: string
     Select:
       name: $select
       in: query
       schema:
         type: string
+    Top:
+      name: $top
+      in: query
+      schema:
+        type: integer
     Format:
       name: $format
       in: query
@@ -91,11 +96,6 @@ components:
         enum:
         - json
         - xml
-    Filter:
-      name: $filter
-      in: query
-      schema:
-        type: string
   schemas:
     ODataCollection:
       type: object
