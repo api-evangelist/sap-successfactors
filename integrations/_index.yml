@@ -27,5 +27,5 @@
     - connectors/applications/sap-success-factors
     vendor_link: https://www.sap.com/products/hcm.html
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
