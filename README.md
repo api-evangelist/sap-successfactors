@@ -1,4 +1,4 @@
-# SAP SuccessFactors (sap-successfactors)
+# SAP SuccessFactors
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,80 +66,122 @@
 
 SAP SuccessFactors is a cloud-based human capital management (HCM) suite that covers core HR, payroll, talent management, learning, recruiting, performance, and workforce analytics for enterprises. The SuccessFactors HXM Suite OData APIs (v2 and v4) provide CRUD access to Employee Central, Recruiting, Onboarding, Learning, and other HCM modules using OAuth 2.0 or HTTP Basic authentication.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/sap-successfactors/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/sap-successfactors/refs/heads/main/apis.yml)
+**Areas:** HCM · Human Resources · Talent Management · Payroll · Enterprise · SAP
 
-## Scope
+## SAP SuccessFactors on APIs.io
 
-- **Type:** Index
+Everything profiled for SAP SuccessFactors is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/sap-successfactors/](https://apis.io/providers/sap-successfactors/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (11)
 
-- HCM
-- HR
-- Human Resources
-- Talent Management
-- Payroll
-- Enterprise
-- SAP
+- [SAP SuccessFactors OData V4 API](https://apis.io/apis/sap-successfactors/odata-v4-api/) — OData V4 REST API for HXM Suite providing CRUD access to Employee Central, talent management, learning, and platform entities. Authentication uses OAuth 2.0…
+- [SAP SuccessFactors OData V2 API](https://apis.io/apis/sap-successfactors/odata-v2-api/) — OData V2 REST API for HXM Suite covering Employee Central, Recruiting, Onboarding, Compensation, Learning, and platform foundation objects. Authentication…
+- [SAP SuccessFactors EmpEmployment API](https://apis.io/apis/sap-successfactors/sap-successfactors-empemployment-api/) — The EmpEmployment API from SAP SuccessFactors — 1 operation(s) for empemployment.
+- [SAP SuccessFactors EmpJob API](https://apis.io/apis/sap-successfactors/sap-successfactors-empjob-api/) — The EmpJob API from SAP SuccessFactors — 1 operation(s) for empjob.
+- [SAP SuccessFactors FOCompany API](https://apis.io/apis/sap-successfactors/sap-successfactors-focompany-api/) — The FOCompany API from SAP SuccessFactors — 1 operation(s) for focompany.
+- [SAP SuccessFactors PerPerson API](https://apis.io/apis/sap-successfactors/sap-successfactors-perperson-api/) — The PerPerson API from SAP SuccessFactors — 1 operation(s) for perperson.
+- [SAP SuccessFactors Upsert API](https://apis.io/apis/sap-successfactors/sap-successfactors-upsert-api/) — The Upsert API from SAP SuccessFactors — 1 operation(s) for upsert.
+- [SAP SuccessFactors User API](https://apis.io/apis/sap-successfactors/sap-successfactors-user-api/) — The User API from SAP SuccessFactors — 1 operation(s) for user.
+- [SAP SuccessFactors User('{userId}') API](https://apis.io/apis/sap-successfactors/sap-successfactors-user-userid-api/) — The User('{userId}') API from SAP SuccessFactors — 1 operation(s) for user('{userid}').
+- [SAP SuccessFactors OAUTH API](https://apis.io/apis/sap-successfactors/sap-successfactors-oauth-api/) — The Oauth API from SAP SuccessFactors — 1 operation(s) for oauth.
+- [SAP SuccessFactors HXM Suite OData API](https://apis.io/apis/sap-successfactors/sap-successfactors-hxm-suite-odata-api/) — The SAP SuccessFactors HXM Suite OData API set (OData v2 and v4) provides programmatic access to Employee Central, Recruiting, Onboarding, Performance &…
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-11
-- **Modified:** 2026-05-11
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### SAP SuccessFactors OData V4 API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-OData V4 REST API for HXM Suite providing CRUD access to Employee Central, talent management, learning, and platform entities. Authentication uses OAuth 2.0 SAML bearer assertion or HTTP Basic.
+- [Sap Successfactors Agentic Access](https://apis.io/agentic-access/sap-successfactors/sap-successfactors-agentic-access/)
 
-- **Human URL:** [https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/9f5f060351034d98990213d077dab38a/b96a4731870e48d090bfbe47b045d259.html](https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/9f5f060351034d98990213d077dab38a/b96a4731870e48d090bfbe47b045d259.html)
-- **Base URL:** `https://api.successfactors.com/odata/v4`
+#### Collections (9)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- HCM
-- OData
-- Employee Central
-- HR
+- [SAP SuccessFactors HXM Suite OData API](https://apis.io/collections/sap-successfactors/open-sap-successfactors/)
+- [SAP SuccessFactors HXM Suite OData EmpEmployment API](https://apis.io/collections/sap-successfactors/open-sap-successfactors-empemployment-api/)
+- [SAP SuccessFactors HXM Suite OData EmpEmployment EmpJob API](https://apis.io/collections/sap-successfactors/open-sap-successfactors-empjob-api/)
+- [SAP SuccessFactors HXM Suite OData EmpEmployment FOCompany API](https://apis.io/collections/sap-successfactors/open-sap-successfactors-focompany-api/)
+- [SAP SuccessFactors HXM Suite OData EmpEmployment Oauth API](https://apis.io/collections/sap-successfactors/open-sap-successfactors-oauth-api/)
+- [SAP SuccessFactors HXM Suite OData EmpEmployment PerPerson API](https://apis.io/collections/sap-successfactors/open-sap-successfactors-perperson-api/)
+- [SAP SuccessFactors HXM Suite OData EmpEmployment Upsert API](https://apis.io/collections/sap-successfactors/open-sap-successfactors-upsert-api/)
+- [SAP SuccessFactors HXM Suite OData EmpEmployment User API](https://apis.io/collections/sap-successfactors/open-sap-successfactors-user-api/)
+- [SAP SuccessFactors HXM Suite OData EmpEmployment User('{userId}') API](https://apis.io/collections/sap-successfactors/open-sap-successfactors-user-userid-api/)
 
-#### Properties
+#### Security (3)
 
-- [Documentation](https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/9f5f060351034d98990213d077dab38a/b96a4731870e48d090bfbe47b045d259.html)
-- [Reference  Guide](https://help.sap.com/doc/2d1d6fcc4eae4db8b9bbd3103baee1c7/2511/en-US/HXMSuiteODataAPIRefGuideV4.pdf)
-- [Postman Collection](collections/sap-successfactors.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/sap-successfactors.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### SAP SuccessFactors OData V2 API
+- [Sap Successfactors Authentication](https://apis.io/security/sap-successfactors/sap-successfactors-authentication/)
+- [Sap Successfactors Domain Security](https://apis.io/security/sap-successfactors/sap-successfactors-domain-security/)
+- [Sap Successfactors Vulnerability Disclosure](https://apis.io/security/sap-successfactors/sap-successfactors-vulnerability-disclosure/)
 
-OData V2 REST API for HXM Suite covering Employee Central, Recruiting, Onboarding, Compensation, Learning, and platform foundation objects. Authentication uses OAuth 2.0 or HTTP Basic.
+#### OAuth scopes (1)
 
-- **Human URL:** [https://help.sap.com/docs/successfactors-platform/sap-successfactors-api-reference-guide-odata-v2/about-sap-successfactors-odata-apis-v2](https://help.sap.com/docs/successfactors-platform/sap-successfactors-api-reference-guide-odata-v2/about-sap-successfactors-odata-apis-v2)
-- **Base URL:** `https://api.successfactors.com/odata/v2`
+The permissions the API asks for.
 
-#### Tags
+- [Sap Successfactors Scopes](https://apis.io/scopes/sap-successfactors/sap-successfactors-scopes/)
 
-- HCM
-- OData
-- Employee Central
-- HR
+## Where to find this API
 
-#### Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- [Documentation](https://help.sap.com/docs/successfactors-platform/sap-successfactors-api-reference-guide-odata-v2/about-sap-successfactors-odata-apis-v2)
-- [Postman Collection](collections/sap-successfactors.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/sap-successfactors.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/SAP)
-- [LinkedIn](https://www.linkedin.com/company/sapsuccessfactors)
 - [Website](https://www.sap.com/products/hcm.html)
 - [Documentation](https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM)
-- [S A P  Help  Portal](https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM)
-- [S A P  A P I  Hub](https://api.sap.com/package/SAPSuccessFactors)
+- [API reference](https://api.sap.com/products/SAPSuccessFactors/apis/REST)
+- [GitHub](https://github.com/SAP)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 23.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 43.7 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 0.0 |
+
+**Agent readiness 22.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 27.5** — Employment & Payroll
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/sap-successfactors/](https://apis.io/providers/sap-successfactors/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for SAP SuccessFactors: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/sap-successfactors/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
